@@ -55,7 +55,7 @@ function install_dependencies(){
 
         #Yarn depends on node version >= 16.0.0
         if [ "$basepkg" == "apt-get" ]; then
-            curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+            curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
             sudo apt-get install nodejs -y
         elif [ "$basepkg" == "yum" ]; then
             if [[ $KERNEL_RELEASE =~ amzn2.x86_64 ]]; then
