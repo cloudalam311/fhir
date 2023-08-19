@@ -53,16 +53,16 @@ function install_dependencies(){
         sudo $PKG_MANAGER update
         sudo $PKG_MANAGER upgrade
 
-        #Yarn depends on node version >= 18.0.0
+        #Yarn depends on node version >= 16.0.0
         if [ "$basepkg" == "apt-get" ]; then
             curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
             sudo apt-get install nodejs -y
         elif [ "$basepkg" == "yum" ]; then
             if [[ $KERNEL_RELEASE =~ amzn2.x86_64 ]]; then
-                curl -sL https://rpm.nodesource.com/setup_18.x | bash -
+                curl -sL https://rpm.nodesource.com/setup_16.x | bash -
                 yum install nodejs -y
             else
-                yum install nodejs18 -y
+                yum install nodejs16 -y
             fi
         fi
 
